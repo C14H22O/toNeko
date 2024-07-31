@@ -26,6 +26,21 @@ public class ToNekoArmorMaterials {
         if (!ConfigUtil.ONLY_SERVER) registerWithOutConfig();
     }
 
+    private static RegistryEntry.Reference<SoundEvent> registerReference(String id) {
+        return registerReference(Identifier.ofVanilla(id));
+    }
+
+    private static RegistryEntry.Reference<SoundEvent> registerReference(Identifier id) {
+        return registerReference(id, id);
+    }
+
+    private static RegistryEntry.Reference<SoundEvent> registerReference(Identifier id, Identifier soundId) {
+        return Registry.registerReference(Registries.SOUND_EVENT, id, SoundEvent.of(soundId));
+    }
+
+    public static final RegistryEntry.Reference<SoundEvent> CAT = registerReference("entity.cat.ambient");
+
+
     /**
      * 强制注册物品，无论配置文件如何设置
      */
@@ -36,7 +51,7 @@ public class ToNekoArmorMaterials {
                         ArmorItem.Type.LEGGINGS, 0 // 猫尾巴要啥防御点呀
                 ),
                 15, // 嗯...还是让你们可以附魔吧
-                SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, // 暂时和皮革的一样就好啦
+                CAT, // 暂时和皮革的一样就好啦
                 () -> Ingredient.ofItems(Items.LEATHER), // 暂时和皮革的一样就好啦
                 0.0F, // 猫尾巴可以吸收什么伤害呢
                 0.0F, // 猫尾巴还能抵御击退吗?肯定不能啦
