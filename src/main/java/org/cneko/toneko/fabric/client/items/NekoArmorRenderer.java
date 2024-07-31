@@ -31,7 +31,7 @@ public class NekoArmorRenderer<T extends NekoArmor<T>> extends GeoArmorRenderer<
             // 旋转180度
             poseStack.multiply(RotationAxis.NEGATIVE_X.rotationDegrees(180));
             // 前进1/16个单位并下移动1单位
-            poseStack.translate(0,-1.5,-0.0625);
+            poseStack.translate(0,-0.45,-0.0625);
         }
     }
 
