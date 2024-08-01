@@ -4,7 +4,8 @@
   "package": "org.cneko.toneko.fabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EntityMixin"
+    "EntityMixin",
+    "PistonBlockEntityMixin"
   ],
   "client": [
   ],
